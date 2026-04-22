@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="한민준 Product Designer 포트폴리오 - 터미널 컨셉">
+    <title>minjun@portfolio:~$ — 한민준 Product Designer</title>
+    <link rel="stylesheet" href="v2_terminal.css">
+</head>
+<body>
+
+<div class="crt-glitch-overlay" id="crtGlitchOverlay"></div>
+
+<!-- Boot Loading Overlay -->
+<div id="bootOverlay" class="boot-overlay">
+    <div class="boot-container">
+        <div class="boot-header">MINJUN PORTFOLIO SYSTEM v2.0</div>
+        <div class="boot-divider">════════════════════════════════════════</div>
+        <div id="bootLog" class="boot-log"></div>
+        <div class="boot-cursor">█</div>
+    </div>
+</div>
+
+<!-- Terminal Title Bar -->
+<header class="terminal-titlebar">
+    <div class="titlebar-dots">
+        <span class="titlebar-dot red"></span>
+        <span class="titlebar-dot yellow"></span>
+        <span class="titlebar-dot green"></span>
+    </div>
+    <span class="titlebar-title">minjun@portfolio:~/designer-profile</span>
+    <nav class="titlebar-nav">
+        <a onclick="scrollToSection('career')">career</a>
+        <a onclick="scrollToSection('skills')">skills</a>
+        <a onclick="scrollToSection('projects')">projects</a>
+        <a onclick="scrollToSection('awards')">awards</a>
+        <a onclick="scrollToSection('talks')">talks</a>
+        <div class="theme-switcher">
+            <button class="theme-btn active" data-theme="blue" title="Blue">🔵</button>
+            <button class="theme-btn" data-theme="black" title="Black">⚫</button>
+            <button class="theme-btn" data-theme="prism" title="Prism">🌈</button>
+        </div>
+        <button class="lang-toggle" id="langToggle" title="한/EN">EN</button>
+    </nav>
+</header>
+
+<!-- Main Terminal Content -->
+<main class="terminal-window">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero-section" id="hero">
+        <div class="terminal-prompt">
+            <span class="path">~/portfolio</span> <span class="symbol">$</span> cat profile.txt
+        </div>
+
+        <pre class="hero-ascii" id="asciiArt">
+ ██╗  ██╗ █████╗ ███╗   ██╗    ███╗   ███╗██╗███╗   ██╗     ██╗██╗   ██╗███╗   ██╗
+ ██║  ██║██╔══██╗████╗  ██║    ████╗ ████║██║████╗  ██║     ██║██║   ██║████╗  ██║
+ ███████║███████║██╔██╗ ██║    ██╔████╔██║██║██╔██╗ ██║     ██║██║   ██║██╔██╗ ██║
+ ██╔══██║██╔══██║██║╚██╗██║    ██║╚██╔╝██║██║██║╚██╗██║██   ██║██║   ██║██║╚██╗██║
+ ██║  ██║██║  ██║██║ ╚████║    ██║ ╚═╝ ██║██║██║ ╚████║╚█████╔╝╚██████╔╝██║ ╚████║
+ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚════╝  ╚═════╝ ╚═╝  ╚═══╝
+        </pre>
+
+        <div class="hero-pixel-scene">
+            <canvas id="pixelBackground" class="pixel-bg-canvas"></canvas>
+            <canvas id="pixelAvatar" class="pixel-avatar" width="192" height="240"></canvas>
+        </div>
+        <div class="hero-info">
+            <h1 class="hero-name glow-text">Minjun Han</h1>
+            <p class="hero-title">Product Designer (Lead) @ LINE</p>
+            <p class="hero-tagline">$ echo "10+ years of crafting digital experiences"<span class="cursor"></span></p>
+        </div>
+
+        <div class="hero-contact">
+            <div class="terminal-prompt" style="margin-bottom:12px;">
+                <span class="path">~</span> <span class="symbol">$</span> cat contact.json
+            </div>
+            <div class="line"><span class="label">"phone":</span> <span class="value">"010-5561-7742"</span></div>
+            <div class="line"><span class="label">"email":</span> <a href="mailto:minjun.design@gmail.com" class="value">minjun.design@gmail.com</a></div>
+            <div class="line"><span class="label">"behance":</span> <a href="https://www.behance.net/minjunhan" target="_blank" class="value">behance.net/minjunhan</a></div>
+            <div class="line"><span class="label">"linkedin":</span> <a href="https://linkedin.com/in/minjunhan" target="_blank" class="value">linkedin.com/in/minjunhan</a></div>
+        </div>
+    </section>
+
+    <!-- ========== CAREER ========== -->
+    <section class="section fade-in" id="career">
+        <div class="section-header">
+            <div class="section-command"><span class="path">~/portfolio</span> <span class="symbol">$</span> <span class="cmd">ls -la career/</span></div>
+            <h2 class="section-title"><canvas class="pixel-icon" id="iconCareer" width="24" height="24"></canvas> 경력사항</h2>
+            <div class="section-divider">════════════════════════════════════════════════════</div>
+        </div>
+        <ul class="career-list">
+            <li class="career-item">
+                <span class="career-year">2021 ~ 현재</span>
+                <span class="career-role"><span class="career-company">라인 (LINE)</span> Product Designer (Lead)</span>
+            </li>
+            <li class="career-item">
+                <span class="career-year">2018 ~ 2021</span>
+                <span class="career-role"><span class="career-company">당근마켓</span> Product Designer</span>
+            </li>
+            <li class="career-item">
+                <span class="career-year">2015 ~ 2018</span>
+                <span class="career-role"><span class="career-company">삼성전자 무선사업부</span> UX Designer</span>
+            </li>
+            <li class="career-item">
+                <span class="career-year">2013 ~ 2015</span>
+                <span class="career-role"><span class="career-company">스튜디오좋</span> 주니어 디자이너</span>
+            </li>
+            <li class="career-item">
+                <span class="career-year">2009 ~ 2013</span>
+                <span class="career-role"><span class="career-company">국민대학교</span> 시각디자인학과</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="section fade-in" id="skills">
+        <div class="section-header">
+            <div class="section-command"><span class="path">~/portfolio</span> <span class="symbol">$</span> <span class="cmd">cat skills.conf</span></div>
+            <h2 class="section-title"><canvas class="pixel-icon" id="iconSkills" width="24" height="24"></canvas> 핵심 역량 & 도구</h2>
+            <div class="section-divider">════════════════════════════════════════════════════</div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-category-title">⚡ 디자인 역량</div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name">UI/UX 디자인</div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name">디자인 시스템</div>
+                    <div class="skill-bar"><div class="skill-bar-fill green" data-width="92"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name">프로토타이핑</div>
+                    <div class="skill-bar"><div class="skill-bar-fill yellow" data-width="88"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name">사용자 리서치</div>
+                    <div class="skill-bar"><div class="skill-bar-fill magenta" data-width="85"></div></div>
+                </div>
+                <div class="skill-bar-wrapper">
+                    <div class="skill-name">모션/인터랙션</div>
+                    <div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">🔧 사용 도구</div>
+                <div class="tools-list">
+                    <span class="tool-tag">Figma</span>
+                    <span class="tool-tag">Sketch</span>
+                    <span class="tool-tag">Adobe CC</span>
+                    <span class="tool-tag">Framer</span>
+                    <span class="tool-tag">ProtoPie</span>
+                    <span class="tool-tag">Principle</span>
+                    <span class="tool-tag">Notion</span>
+                    <span class="tool-tag">Jira</span>
+                    <span class="tool-tag">Confluence</span>
+                    <span class="tool-tag">Zeplin</span>
+                    <span class="tool-tag">Python</span>
+                    <span class="tool-tag">After Effects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="section fade-in" id="projects">
+        <div class="section-header">
+            <div class="section-command"><span class="path">~/portfolio</span> <span class="symbol">$</span> <span class="cmd">find projects/ -type f | sort -r</span></div>
+            <h2 class="section-title"><canvas class="pixel-icon" id="iconProjects" width="24" height="24"></canvas> 주요 프로젝트</h2>
+            <div class="section-divider">════════════════════════════════════════════════════</div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2024</div>
+            <div class="project-card">
+                <div class="project-name">라인 메신저 채팅 UX 리디자인</div>
+                <ul class="project-details">
+                    <li>대화방 정보 구조 재설계 및 새로운 인터랙션 패턴 도입</li>
+                    <li>일본/태국/대만 3개국 사용성 테스트 진행</li>
+                    <li class="project-metric">📊 메시지 탐색 시간 40% 단축</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-name">라인 디자인 시스템 3.0 구축 리드</div>
+                <ul class="project-details">
+                    <li>컴포넌트 240개 체계화, 다크모드 전면 지원</li>
+                    <li>사내 디자인 시스템 컨퍼런스 기획 및 발표</li>
+                    <li class="project-metric">📊 디자인-개발 핸드오프 시간 50% 단축</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2023</div>
+            <div class="project-card">
+                <div class="project-name">라인 VOOM (숏폼) 크리에이터 스튜디오</div>
+                <ul class="project-details">
+                    <li>영상 편집 도구 UI 설계 및 프로토타이핑</li>
+                    <li>크리에이터 온보딩 플로우 디자인</li>
+                    <li class="project-metric">📊 콘텐츠 업로드 완료율 35% 향상</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-name">라인 AI 어시스턴트 UI 디자인</div>
+                <ul class="project-details">
+                    <li>대화형 AI 인터페이스 디자인 가이드라인 수립</li>
+                    <li>멀티모달 입출력 UI 패턴 설계</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2022</div>
+            <div class="project-card">
+                <div class="project-name">라인 선물하기 서비스 글로벌 런칭</div>
+                <ul class="project-details">
+                    <li>일본/태국 현지화 UI 설계</li>
+                    <li class="project-metric">📊 구매 전환율 22% 향상</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-name">라인 Pay 결제 UX 간소화</div>
+                <ul class="project-details">
+                    <li>결제 플로우 5단계 → 3단계 축소</li>
+                    <li>생체 인증 연동 UI 설계</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2021 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2021</div>
+            <div class="project-card">
+                <div class="project-name">당근마켓 채팅 거래 경험 개선</div>
+                <ul class="project-details">
+                    <li>가격 제안/약속 잡기 인터랙션 디자인</li>
+                    <li class="project-metric">📊 거래 성사율 18% 향상</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-name">당근마켓 동네생활 피드 리디자인</div>
+                <ul class="project-details">
+                    <li>카드형 피드 UI 및 이미지 뷰어 설계</li>
+                    <li class="project-metric">📊 게시글 조회율 25% 증가</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2020 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2020</div>
+            <div class="project-card">
+                <div class="project-name">당근마켓 비즈프로필 사장님 페이지</div>
+                <ul class="project-details">
+                    <li>소상공인 프로필 빌더 UI 설계</li>
+                    <li class="project-metric">📊 사장님 가입 전환율 30% 향상</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-name">당근마켓 디자인 시스템 "당근 씨앗" 초기 구축</div>
+                <ul class="project-details">
+                    <li>Figma 컴포넌트 라이브러리 120개 구축</li>
+                    <li>디자인 토큰 체계 설계</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2019 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2019</div>
+            <div class="project-card">
+                <div class="project-name">당근마켓 검색 경험 리디자인</div>
+                <ul class="project-details">
+                    <li>필터 UI 및 검색 결과 레이아웃 개선</li>
+                    <li class="project-metric">📊 검색 후 상세 조회율 20% 향상</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2018</div>
+            <div class="project-card">
+                <div class="project-name">당근마켓 앱 전면 리디자인</div>
+                <ul class="project-details">
+                    <li>홈 피드 카드 UI 및 하단 네비게이션 설계</li>
+                    <li>신규 브랜드 아이덴티티 적용</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2017 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2017</div>
+            <div class="project-card">
+                <div class="project-name">삼성 갤럭시 S8 Always On Display UI</div>
+                <ul class="project-details">
+                    <li>시계/알림 위젯 비주얼 디자인</li>
+                    <li>저전력 디스플레이 환경 제약 내 디자인 최적화</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-name">삼성 갤럭시 테마스토어 UI 개편</div>
+                <ul class="project-details">
+                    <li>테마 미리보기 및 적용 플로우 개선</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2016 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2016</div>
+            <div class="project-card">
+                <div class="project-name">삼성 갤럭시 S7 Edge Panel UI</div>
+                <ul class="project-details">
+                    <li>엣지 패널 앱 바로가기/연락처 UI 설계</li>
+                    <li>한 손 조작 인터랙션 패턴 연구</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-name">삼성페이 카드 등록 UX 개선</div>
+                <ul class="project-details">
+                    <li>OCR 스캔 연동 UI 및 에러 핸들링 설계</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2015 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2015</div>
+            <div class="project-card">
+                <div class="project-name">삼성 갤럭시 S6 기본 앱 아이콘 리디자인</div>
+                <ul class="project-details">
+                    <li>플랫 디자인 전환 가이드라인 수립</li>
+                    <li>아이콘 200개 리디자인</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2014 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2014</div>
+            <div class="project-card">
+                <div class="project-name">현대카드 뮤직 라이브러리 공간 그래픽</div>
+                <ul class="project-details">
+                    <li>사이니지 및 공간 안내 시스템 디자인</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <div class="project-name">아모레퍼시픽 이니스프리 패키지 디자인</div>
+                <ul class="project-details">
+                    <li>시즌 한정판 패키지 일러스트레이션</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2013 -->
+        <div class="project-year-group fade-in">
+            <div class="project-year-label">2013</div>
+            <div class="project-card">
+                <div class="project-name">서울시 공공 캠페인 "서울은 꽃이다" 포스터</div>
+                <ul class="project-details">
+                    <li>타이포그래피 기반 시리즈 포스터 4종 디자인</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AWARDS ========== -->
+    <section class="section fade-in" id="awards">
+        <div class="section-header">
+            <div class="section-command"><span class="path">~/portfolio</span> <span class="symbol">$</span> <span class="cmd">grep -r "★" awards.log</span></div>
+            <h2 class="section-title"><canvas class="pixel-icon" id="iconAwards" width="24" height="24"></canvas> 수상실적</h2>
+            <div class="section-divider">════════════════════════════════════════════════════</div>
+        </div>
+        <table class="awards-table">
+            <thead>
+                <tr><th>YEAR</th><th>AWARD</th><th>PROJECT</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="award-year">2024</td><td class="award-name">Good Design Award (일본)</td><td class="award-project">라인 디자인 시스템</td></tr>
+                <tr><td class="award-year">2023</td><td class="award-name">iF Communication Design</td><td class="award-project">라인 VOOM</td></tr>
+                <tr><td class="award-year">2022</td><td class="award-name">Reddot Design Award</td><td class="award-project">라인 선물하기</td></tr>
+                <tr><td class="award-year">2021</td><td class="award-name">Google Play Best App Design 후보</td><td class="award-project">당근마켓</td></tr>
+                <tr><td class="award-year">2020</td><td class="award-name">IDEA Design Award</td><td class="award-project">당근마켓 앱</td></tr>
+                <tr><td class="award-year">2019</td><td class="award-name">GDA</td><td class="award-project">당근마켓 UI Design</td></tr>
+                <tr><td class="award-year">2017</td><td class="award-name">iF Design Award</td><td class="award-project">Galaxy S8 AOD</td></tr>
+                <tr><td class="award-year">2016</td><td class="award-name">Reddot Design Award</td><td class="award-project">Galaxy S7 Edge Panel</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ========== TALKS ========== -->
+    <section class="section fade-in" id="talks">
+        <div class="section-header">
+            <div class="section-command"><span class="path">~/portfolio</span> <span class="symbol">$</span> <span class="cmd">cat talks.md</span></div>
+            <h2 class="section-title"><canvas class="pixel-icon" id="iconTalks" width="24" height="24"></canvas> 강연 및 활동</h2>
+            <div class="section-divider">════════════════════════════════════════════════════</div>
+        </div>
+        <ul class="talks-list">
+            <li class="talk-item">
+                <span class="talk-year">2024</span>
+                <span class="talk-desc"><span class="talk-event">Config (Figma 컨퍼런스)</span> 한국 커뮤니티 세션 연사</span>
+            </li>
+            <li class="talk-item">
+                <span class="talk-year">2023</span>
+                <span class="talk-desc"><span class="talk-event">디자인 스펙트럼</span> 연사 — "디자인 시스템, 만들기보다 지키기가 어렵다"</span>
+            </li>
+            <li class="talk-item">
+                <span class="talk-year">2022</span>
+                <span class="talk-desc"><span class="talk-event">FEConf</span> 연사 — "디자이너가 코드를 읽으면 생기는 일"</span>
+            </li>
+            <li class="talk-item">
+                <span class="talk-year">2021</span>
+                <span class="talk-desc"><span class="talk-event">UXCAMP Seoul</span> 연사 — "당근마켓 로컬 서비스 디자인"</span>
+            </li>
+            <li class="talk-item">
+                <span class="talk-year">2020</span>
+                <span class="talk-desc"><span class="talk-event">디자인 나침반</span> 멘토 (주니어 디자이너 멘토링)</span>
+            </li>
+            <li class="talk-item">
+                <span class="talk-year">2019</span>
+                <span class="talk-desc"><span class="talk-event">노트폴리오</span> 인터뷰 — "프로덕트 디자이너로 성장하기"</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section class="section fade-in" id="gallery">
+        <div class="section-header">
+            <div class="section-command"><span class="path">~/portfolio</span> <span class="symbol">$</span> <span class="cmd">ls -la gallery/ --pixel-mode</span></div>
+            <h2 class="section-title"><canvas class="pixel-icon" id="iconGallery" width="24" height="24"></canvas> 작업 갤러리</h2>
+            <div class="section-divider">════════════════════════════════════════════════════</div>
+        </div>
+        <div class="pixel-gallery">
+            <div class="pixel-gallery-item">
+                <div class="pixel-frame">
+                    <img class="pixel-art-img" src="img_001.jpg" alt="Photography Work">
+                </div>
+                <div class="pixel-gallery-label">photography_01.png</div>
+            </div>
+            <div class="pixel-gallery-item">
+                <div class="pixel-frame">
+                    <img class="pixel-art-img" src="img_006.jpg" alt="Fashion Design">
+                </div>
+                <div class="pixel-gallery-label">fashion_design.png</div>
+            </div>
+            <div class="pixel-gallery-item">
+                <div class="pixel-frame">
+                    <img class="pixel-art-img" src="img_017.jpg" alt="Typography Poster">
+                </div>
+                <div class="pixel-gallery-label">typography_poster.png</div>
+            </div>
+            <div class="pixel-gallery-item">
+                <div class="pixel-frame">
+                    <img class="pixel-art-img" src="img_018.jpg" alt="Graphic Design">
+                </div>
+                <div class="pixel-gallery-label">graphic_design.png</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <pre class="footer-ascii">
+  ╔══════════════════════════════════════╗
+  ║   Thank you for visiting my profile  ║
+  ║   Let's create something amazing!    ║
+  ╚══════════════════════════════════════╝
+        </pre>
+        <p class="footer-text">© 2024 한민준. Built with pure HTML/CSS/JS.</p>
+        <p class="footer-prompt">minjun@portfolio:~$ <span class="cursor"></span></p>
+    </footer>
+
+</main>
+
+<!-- Pixel decoration canvas -->
+<canvas id="pixelDecoration" class="pixel-decoration" width="64" height="64"></canvas>
+
+<script src="v2_terminal.js"></script>
+</body>
+</html>
