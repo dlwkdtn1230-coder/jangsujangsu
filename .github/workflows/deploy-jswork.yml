@@ -1,0 +1,48 @@
+name: Deploy JSWORK portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [jswork-site]
+    paths:
+      - "JSWORK-GitHub-Pages.zip"
+      - ".github/workflows/deploy-jswork.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout JSWORK branch
+        uses: actions/checkout@v4
+
+      - name: Unpack the JSWORK site
+        shell: bash
+        run: |
+          test -f "JSWORK-GitHub-Pages.zip" || { echo "Upload JSWORK-GitHub-Pages.zip to the root of this branch first."; exit 1; }
+          mkdir -p _site
+          unzip -o -q "JSWORK-GitHub-Pages.zip" -d _site
+          test -f _site/index.html || { echo "index.html is missing in the zip root."; exit 1; }
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
